@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "ng-reactiveforms-add-sections-dynamic"
+  "defaultProject": "ng-reactiveforms-add-sections-dynamic",
+  "cli": {
+    "analytics": false
+  }
 }
