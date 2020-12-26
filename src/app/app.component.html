@@ -61,10 +61,10 @@
               
             </div>
             <div class="p-3 mb-2">
-              <strong>Action Steps</strong>
+              <strong>Action Steps</strong><hr class="linecolor">
             </div>
-            <div class="row" formArrayName="stepsArray" *ngFor="let steps of stepsArrayGroup.controls; let i = index">
-              <label for="step" class="col-md-8 col-form-label step">STEP {{ i }}</label>
+            <div class="row" formArrayName="stepsArray" *ngFor="let steps of stepsArrayGroup.controls; let i = index" style="border: 1px solid grey">
+              <label for="step" class="col-md-8 col-form-label step"><strong>STEP {{ i }}</strong></label>
               <div class="col-11" [formGroupName]="i">
                 <div class="form-group">
                   <app-action-steps [stepCounter]="i" formControlName="actionStepsForm"></app-action-steps>
@@ -82,7 +82,7 @@
                 </div>
               </div>
             </div>
-            <hr />
+            
             <div class="row p-3">
               <button class="btn btn-primary float-right" (click)="addStep()">
                 Add Step
