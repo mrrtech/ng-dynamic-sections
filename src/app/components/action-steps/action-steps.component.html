@@ -1,0 +1,61 @@
+<div class="pt-4 pl-5 mb-3">
+    <div class="row" [formGroup]="actionStepsForm">
+        <div class="col-12">
+            <p-accordion header="STEP {{ stepCounter}}">
+                <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <div class="col-md-8">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="actionName"
+                            type="text"
+                            placeholder="Action Name (required)"
+                            formControlName="actionName"
+                            [ngClass]="{
+                              'is-invalid':
+                                (actionStepsForm.get('actionName').touched ||
+                                actionStepsForm.get('actionName').dirty) &&
+                                !actionStepsForm.get('actionName').valid
+                            }"
+                          />
+                          <span class="invalid-feedback">
+                            <span *ngIf="actionStepsForm.get('actionName').errors?.required">
+                              Please enter action name.
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <div class="col-md-8">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="actionCommand"
+                            type="text"
+                            placeholder="Action Command (required)"
+                            formControlName="actionCommand"
+                            [ngClass]="{
+                              'is-invalid':
+                                (actionStepsForm.get('actionCommand').touched ||
+                                actionStepsForm.get('actionCommand').dirty) &&
+                                !actionStepsForm.get('actionCommand').valid
+                            }"
+                          />
+                          <span class="invalid-feedback">
+                            <span *ngIf="actionStepsForm.get('actionCommand').errors?.required">
+                              Please enter action command.
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+            </p-accordion>
+        </div>
+    </div>
+</div>
